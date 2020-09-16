@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Reports</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="mainDiv">
+        <h1 class="title">Registration</h1>
+        <form method="post" id="form">
+            <label for="id">ID</label>
+            <input type="number" name="id" id="id">
+
+            <label for="mail">Gmail or Outlook</label>
+            <input type="email" name="mail" id="mail">
+
+            <label for="school">School</label>
+            <select name="school" id="school"></select>
+
+            <label for="computer">Computer description</label>
+            <select name="computer" id="computer"></select>
+
+            <label for="image">Upload an image</label>
+            <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+
+            <input type="submit" id="submit" value="Submit report">
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

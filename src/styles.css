@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    background-image: url(assets/computer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*Containers*/
+.mainDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color:  #f1f1f1;
+    padding: 20px; 
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    height: auto;
+    transition: opacity 2s; 
+}
+.title{
+    margin-bottom: 20px;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 1s;
+}
+/*All the inpus*/
+input{
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0);
+    color:  #f1f1f1;
+    border: none;
+    border-bottom-width: 100%;
+    border-bottom: 0.5px solid #f1f1f1;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+input:active, input:focus{
+    outline: none;
+}
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+/*Select boxes*/
+#school, #computer{
+    color: white;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    margin-bottom: 15px;
+}
+#school:hover, #computer:hover{
+    cursor: pointer;
+}
+
+/*Submit button*/
+#submit{
+    border: 1px solid white;
+    border-radius: 10px;
+}
+#submit:hover{
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
