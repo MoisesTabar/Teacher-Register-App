@@ -1,0 +1,89 @@
+{
+    "computers":[
+        {"id":501,"name": "HP-PAVILION", "RAM": "4GB", "Storage": "400 HDD"},
+        {"id":502,"name": "DELL-OPTIPLEX", "RAM": "4GB", "Storage": "500 HDD"},
+        {"id":503,"name": "LENOVO LEGION Y570", "RAM": "16GB", "Storage": "500 SDD"},
+        {"id":504,"name": "CHROMEBOOK", "RAM": "6GB", "Storage": "500 SDD"},
+        {"id":505,"name": "MSIGF63", "RAM": "8GB", "Storage": "600 SDD"},
+        {"id":506,"name": "LENOVO-IDEAPAD", "RAM": "8GB", "Storage": "500SDD"},
+        {"id":507,"name": "HP-ELITE-DRAGONFLY", "RAM": "16GB", "Storage": "500 SDD"},
+        {"id":508,"name": "ASUS VIVOBOOK", "RAM": "8GB", "Storage": "500 HDD"},
+        {"id":509,"name": "LENOVO THINKBOOK", "RAM": "4GB", "Storage": "400 HDD"},
+        {"id":601,"name": "HP-ENVY", "RAM": "6GB", "Storage": "500 SDD"}
+       ],
+
+    "schools":[
+         {
+           "id": 1,
+           "name": "Prado Oriental"
+         },
+         {
+           "id": 2,
+           "name": "Cervantes"
+         },
+         {
+           "id": 3,
+           "name": "Cathedral School"
+         },
+         {
+           "id": 4,
+           "name": "Brilliant Minds"
+         },
+         {
+           "id": 5,
+           "name": "Liceo Emiliano Tejeda"
+         },
+         {
+           "id": 6,
+           "name": "Liceo Juan Pablo Duarte"
+         },
+         {
+           "id": 7,
+           "name": "Liceo Matias Ramon Mella"
+         },
+         {
+           "id": 8,
+           "name": "Gregorio Hernandez"
+         },
+         {
+           "id": 9,
+           "name": "Dominico Americano Language School"
+         },
+         {
+           "id": 10,
+           "name": "Colegio Tecnico Palmarito"
+         },
+         {
+           "id": 11,
+           "name": "Liceo Emilio Prud Homme"
+         },
+         {
+           "id": 12,
+           "name": "Politecnico ITLA"
+         },
+         {
+           "id": 13,
+           "name": "Liceo Francisco del Rosario Sanchez"
+         },
+         {
+           "id": 14,
+           "name": "Politecnico Zona Franca Salcedo"
+         },
+         {
+           "id": 15,
+           "name": "Colegio Amalia"
+         },
+         {
+           "id": 16,
+           "name": "Colegio Dionarys Elizabeth"
+         },
+         {
+           "id": 17,
+           "name": "Bilingual School Sunyshore"
+         },
+         {
+           "id": 18,
+           "name": "Colegio Metodo Montessori"
+         }
+       ]
+    }

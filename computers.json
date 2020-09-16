@@ -1,0 +1,14 @@
+{
+"computers":[
+    {"id":501,"name": "HP-PAVILION", "RAM": "4GB", "Storage": "400 HDD"},
+    {"id":502,"name": "DELL-OPTIPLEX", "RAM": "4GB", "Storage": "500 HDD"},
+    {"id":503,"name": "LENOVO LEGION Y570", "RAM": "16GB", "Storage": "500 SDD"},
+    {"id":504,"name": "CHROMEBOOK", "RAM": "6GB", "Storage": "500 SDD"},
+    {"id":505,"name": "MSIGF63", "RAM": "8GB", "Storage": "600 SDD"},
+    {"id":506,"name": "LENOVO-IDEAPAD", "RAM": "8GB", "Storage": "500SDD"},
+    {"id":507,"name": "HP-ELITE-DRAGONFLY", "RAM": "16GB", "Storage": "500 SDD"},
+    {"id":508,"name": "ASUS VIVOBOOK", "RAM": "8GB", "Storage": "500 HDD"},
+    {"id":509,"name": "LENOVO THINKBOOK", "RAM": "4GB", "Storage": "400 HDD"},
+    {"id":601,"name": "HP-ENVY", "RAM": "6GB", "Storage": "500 SDD"}
+   ]
+}
