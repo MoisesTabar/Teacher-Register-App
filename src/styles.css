@@ -53,8 +53,10 @@ input::-webkit-inner-spin-button{
 }
 /*Select boxes*/
 #school, #computer{
-    color: white;
+    color: rgb(172, 172, 172);
     width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
     background: rgba(0, 0, 0, 0);
     margin-bottom: 15px;
 }
@@ -71,4 +73,13 @@ input::-webkit-inner-spin-button{
     transition: color 0.3s ease, background-color 0.3s ease;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
+}
+
+/*error class*/
+.error{
+    color: red;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    transition: opacity 1s;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
