@@ -65,21 +65,38 @@ input::-webkit-inner-spin-button{
 }
 
 /*Submit button*/
-#submit{
+#submit, #querySubmit{
     border: 1px solid white;
     border-radius: 10px;
 }
-#submit:hover{
+#submit:hover, #querySubmit:hover{
     transition: color 0.3s ease, background-color 0.3s ease;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
-/*error class*/
-.error{
-    color: red;
+/*Table*/
+.secondDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 1s; 
+}
+.secondDiv, th{
+    padding-left: 15px;
+    padding-right: 15px;
     font-size: 1.1rem;
-    margin-bottom: 15px;
-    transition: opacity 1s;
-    transition: color 0.3s ease, background-color 0.3s ease;
+}
+.secondDiv, thead{
+    color: white;
+}
+#tbodyData{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1rem;
 }

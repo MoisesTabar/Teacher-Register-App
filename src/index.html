@@ -12,7 +12,7 @@
         <h1 class="title">Registration</h1>
         <form method="post" id="form">
             <label for="id">ID</label>
-            <input type="number" name="id" id="id">
+            <input type="number" name="id" id="id" placeholder="xxx-xxxxxxx-x">
 
             <label for="mail">Gmail or Outlook</label>
             <input type="email" name="mail" id="mail">
@@ -24,10 +24,32 @@
             <select name="computer" id="computer"></select>
 
             <label for="image">Upload an image</label>
-            <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg">
+            <input type="file" name="image" id="image" accept="image/*">
 
             <input type="submit" id="submit" value="Submit report">
+
+            <input type="submit" id="querySubmit" value="Visualize data">
         </form>
+    </div>
+
+    <div class="secondDiv">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Mail</th>
+                    <th>School</th>
+                    <th>Computer description</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Birthdate</th>
+                    <th>Gender</th>
+                    <th>2x2 Photo</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyData"></tbody>
+        </table>
     </div>
     <script src="app.js"></script>
 </body>
