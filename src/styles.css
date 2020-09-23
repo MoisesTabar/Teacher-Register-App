@@ -22,6 +22,7 @@ body{
     width: 50%;
     height: auto;
     transition: opacity 2s; 
+    border: 0.1px solid white;
 }
 .title{
     margin-bottom: 20px;
@@ -65,11 +66,11 @@ input::-webkit-inner-spin-button{
 }
 
 /*Submit button*/
-#submit, #querySubmit{
+#submit, #querySubmit ,#deleteAll, #print{
     border: 1px solid white;
     border-radius: 10px;
 }
-#submit:hover, #querySubmit:hover{
+#submit:hover, #querySubmit:hover, #deleteAll:hover, #print:hover{
     transition: color 0.3s ease, background-color 0.3s ease;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -77,26 +78,28 @@ input::-webkit-inner-spin-button{
 
 /*Table*/
 .secondDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 20px;
-    width: auto;
+    width: 75%;
+    margin-top: 30px;
     height: auto;
     background: rgba(0, 0, 0, 0.5);
     transition: opacity 1s; 
 }
-.secondDiv, th{
-    padding-left: 15px;
-    padding-right: 15px;
+.secondDiv, table{
+    border-collapse: collapse;
+}
+.secondDiv, th, tr, td{
+    text-align: center;
     font-size: 1.1rem;
-}
-.secondDiv, thead{
     color: white;
+    border: 0.1px solid white;
 }
-#tbodyData{
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 1rem;
+
+/*Printing*/
+@media print{
+    body * {
+        visibility: hidden;
+    }
+    .secondDiv, .secondDiv * {
+        visibility: visible;
+    }
 }

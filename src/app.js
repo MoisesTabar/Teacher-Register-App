@@ -48,14 +48,14 @@ const fillComps = async () => {
     const response = await request.json();
 
     for(elements in response){
-        selectComp.options[selectComp.options.length] = new Option(JSON.stringify(response[elements]));
+        selectComp.options[selectComp.options.length] = new Option(JSON.stringify(response[elements].name + JSON.stringify(response[elements].RAM) + JSON.stringify(response[elements].Storage)));
     }
 }
 fillSchools();
 fillComps();
 //arrays of the table
-let columns = [];
-let column = [];
+var columns = [];
+var column = [];
 //input the id so it can match the data from an api and display it later in a table 
 const inputID = document.querySelector('#id');
 const queryID = async () => {
@@ -64,71 +64,97 @@ const queryID = async () => {
     const response = await request.json();
     //fields specified
     const {Nombres, Apellido1, FechaNacimiento, IdSexo ,foto} = response;
+    
     column.push(Nombres)
     column.push(Apellido1)
     column.push(FechaNacimiento)
     column.push(IdSexo)
-    column.push(foto)
+    column.push(innerHTML = `<img src=${foto}>`);
+
+    columns.push(column);
+    localStorage.setItem('data', JSON.stringify(columns));
 }
 
 //validating the form
 const mail = document.querySelector('#mail');
 const image = document.querySelector('#image');
-const submit = document.querySelector('#submit')
+const submit = document.querySelector('#submit');
 
-const formValidation = () => {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-        if(inputID.value === ''||mail.value === '' || selectSchools.selectedIndex == 0 || selectComp.selectedIndex == 0|| image.value == ''){
-            console.log('empty fields')
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+    if(inputID.value === ''||mail.value === '' || selectSchools.selectedIndex == 0 || selectComp.selectedIndex == 0|| image.value == ''){
+        console.log('empty fields')
+    }
+    else{
+        const fill = () => {
+            column = [];
+            column.push(inputID.value)
+            column.push(mail.value)
+            column.push(selectSchools.options[selectSchools.options.selectedIndex].text)
+            column.push(selectComp.options[selectComp.options.selectedIndex].text);
+            column.push(innerHTML = `<img src=${image.value}`);
+
+            queryID();
         }
-        else{
-            const fill = () => {
-                column.push(inputID.value)
-                column.push(mail.value)
-                column.push(selectSchools.options[selectSchools.options.selectedIndex].text)
-                column.push(selectComp.options[selectComp.options.selectedIndex].text)
-                column.push(image.value);
-                
-                columns.push(column);
-                const data = JSON.stringify(columns);
-                localStorage.setItem('data', data);
-            }
-            fill()
-            alert('Registration completed!')
-        }
-    }); 
+        fill();
+        alert('Registration completed!')
+    }
+}); 
 
-    const querySubmit = document.querySelector('#querySubmit');
+const querySubmit = document.querySelector('#querySubmit');
+const tBody = document.querySelector('#tbodyData');
 
-    querySubmit.addEventListener('click', (e) => {
-    e.preventDefault();
-    const showData = () => {
-        const tBody = document.querySelector('#tbodyData');
+querySubmit.addEventListener('click', (e) => {
+e.preventDefault();
+const showData = () => {
+        setTimeout(() => {
+            secondDiv.style.opacity = 1;
+        }, 0300);
+        
         tBody.innerHTML = '';
-            setTimeout(() => {
-                secondDiv.style.opacity = 1;
-            }, 0500);
+        for(let x = 0; x < columns.length; x++){
+            let tr = document.createElement('tr');
+            column = columns[x];
 
-            for(let x = 0; x < columns.length; x++){
-                let tr = document.createElement('tr');
-                column = columns[x];
-
-                for(let y = 0; y < column.length; y++){
-                    let data = column[y];
-                    let td = document.createElement('td');
-                    td.innerHTML = data;
-                    tr.appendChild(td)
-                }
-                tBody.appendChild(tr);
+            for(let y = 0; y < column.length; y++){
+                let data = column[y];
+                let td = document.createElement('td');
+                td.innerHTML = data;
+                tr.appendChild(td)
             }
+            tBody.appendChild(tr);
         }
+    }
+    var data = localStorage.getItem('data')
+    if(data != null){
+        columns = JSON.parse(data);
         showData();
-        const data = localStorage.getItem('data');
-        if(data != null){
-            columns = JSON.parse(data);
-            showData();
-        }
-    });
-}
-formValidation();
+    }
+    
+});
+
+const del = document.querySelector('#deleteAll');
+del.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(localStorage.getItem('data') == undefined){
+        console.log('Nothing to delete');
+    }
+    else{
+        let delPrompt = prompt('Write Javascript is the best to delete all')
+        if(delPrompt == 'Javascript is the best'){
+            alert('Deleted')
+            localStorage.clear();
+        } 
+    }   
+})
+
+const print = document.querySelector('#print');
+print.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(localStorage.getItem('data') == undefined){
+        console.log('Nothing to print');
+    }
+    else{
+    window.print()
+    }
+});
